@@ -5,7 +5,6 @@ import "./Header.css";
 
 const Header = () => {
   const { SingInWithGoogle, user, handelSingOut } = useFirebass({});
-  console.log(user.displayName);
   return (
     <nav className="bg-success d-flex justify-content-between align-items-center p-3">
       <div>
@@ -24,10 +23,20 @@ const Header = () => {
         <Link className="menu-bar" to={"/reagster"}>
           Reagster
         </Link>
-        <Link className="menu-bar" to={"/login"}>
-          Login
-        </Link>
-        <span>
+        <span className="ms-2 text-white p-2">
+          {user?.displayName && user.displayName}
+          <img className="header-img ms-2 me-2" src={user?.photoURL} alt="" />
+        </span>
+        {user?.uid ? (
+          <button className=" text-white heder-loogOut" onClick={handelSingOut}>
+            Out
+          </button>
+        ) : (
+          <Link className="menu-bar" to={"/login"}>
+            Login
+          </Link>
+        )}
+        {/* <span>
           <img className="header-img ms-2 me-2" src={user.photoURL} alt="" />
           {user.email ? (
             <button
@@ -39,7 +48,7 @@ const Header = () => {
           ) : (
             <button onClick={SingInWithGoogle}>LogIn</button>
           )}
-        </span>
+        </span> */}
       </div>
     </nav>
   );

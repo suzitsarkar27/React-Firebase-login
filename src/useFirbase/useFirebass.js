@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   getAuth,
-  // onAuthStateChanged,
+  onAuthStateChanged,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -23,6 +23,7 @@ const useFirebass = () => {
         console.log(error);
       });
   };
+
   const handelSingOut = () => {
     signOut(auth)
       .then(() => {
@@ -32,9 +33,11 @@ const useFirebass = () => {
         console.log(error);
       });
   };
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {});
-  // }, []);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, []);
   return { user, SingInWithGoogle, handelSingOut };
 };
 export default useFirebass;

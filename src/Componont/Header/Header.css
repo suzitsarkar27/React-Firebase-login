@@ -9,3 +9,12 @@
     height: 50px;
     width: 50px;
 }
+.heder-loogOut{
+    border-radius: 20px;
+    background-color:orange;
+    box-shadow:5px 5px 7px #312626,5px 5px 7px black;
+    padding:2px 10px;
+}
+.heder-loogOut:hover{
+    background-color:green;
+}
