@@ -1,0 +1,29 @@
+.Login-from input{
+    border-radius: 50px;
+    margin-bottom: 20px ;
+}
+.container-from{
+    background-color: green;
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    border-radius: 20px;
+}
+.container-from input{
+    border-radius: 10px;
+    margin-bottom:15px;
+    width:200px;
+   outline: none; 
+}
+.container-from input:hover{
+  border: 1px solid orangered;
+}
+.Login-btn{
+    width: 200px;
+    border-radius:10px;
+    margin-top:20px;
+    transition: .5s;
+}
+.Login-btn:hover{
+    background-color: peru;
+}
